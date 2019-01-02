@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "navigationBarTitleText": "规划详情",
+  "usingComponents": {
+    "list": "/components/list/list",
+    "share":"/components/share/share",
+    "login":"/components/login/login"            
+  }
+}

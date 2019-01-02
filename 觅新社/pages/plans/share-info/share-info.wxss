@@ -1,0 +1,55 @@
+/* pages/plans/share-info/share-info.wxss */
+.dt{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  color: #646464;
+  padding-left: 30rpx;
+  background: #f5f5f5;
+}
+.dd{
+  background: #fff;
+  padding:0 30rpx; 
+}
+.dd .row{
+  overflow: hidden;
+  height: 100rpx;
+}
+.dd .row:nth-child(1){
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.til{
+  width: 160rpx;
+  font-size: 30rpx;
+  color: #323233;
+}
+.i input{
+  font-size:30rpx;
+}
+.sub-btn{
+  margin-top: 48rpx;
+  width: 690rpx;
+  height: 80rpx;
+  color:#323233;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 0;
+  border: 1rpx solid #323233;
+}
+.file-btn{
+  width: 161rpx;
+  height: 161rpx;
+  float: left;
+}
+.file-btn image{
+  width: 161rpx;
+  height: 161rpx;
+}
+.upload-block{
+  padding: 30rpx 0 20rpx 30rpx;
+  overflow: hidden;
+}
+.img-list{
+  height: 160rpx;
+}

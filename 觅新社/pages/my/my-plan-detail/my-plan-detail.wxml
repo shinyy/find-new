@@ -1,0 +1,68 @@
+<!-- 授权弹窗 -->
+     <view class="mask {{showAuthority?'':'hide'}}">
+       <button open-type='getUserInfo' lang='zh_CN' class="getUserInfoBtn" bindgetuserinfo="getSecret">请授权</button> 
+    </view>   
+  <!-- 授权弹窗 -->
+<view class="body">
+  <view class="y-bgw section y-bmar20">
+    <list showType="type2"
+          favorite_num="{{plan.favorite_num}}"
+          forward_num="{{plan.forward_num}}"
+          name="{{plan.title}}"
+          logo="{{plan.image}}"
+    ></list>
+  </view>
+  <view class="">
+    <view class="li y-grid y-bgw" wx:for="{{plan.attribute}}">
+      <navigator class="y-rmar20" url="../../plans/active-detail/active-detail?id={{item.activity.id}}">
+        <image src="{{item.activity.image}}" />
+      </navigator>
+      <view class="info y-flex1">
+        <navigator class="tilnav" url="../../plans/active-detail/active-detail?id={{item.activity.id}}">
+          <!-- <view class="h3 line-clamp-2">在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密...</view> -->
+          <view class="h3 line-clamp-2">{{item.activity.name}}</view>     
+          <view class="mark">{{item.name}}</view>
+        </navigator>
+        <view class="tt y-bmar5">提供商家使用码或手机号</view>
+        <view class="code">
+          <text >使用码：</text>
+          <text >4AND3DAD</text>
+        </view>
+        <view class="other-row y-grid y-alignc y-j-s">
+          <view class="time">仅限{{item.activity.activity_date}}</view>
+          <view class="y-grid">
+            <view class="y-grid y-alignc y-rmar38" 
+                  data-id="{{item.activity.id}}"
+                  data-shareimg="{{item.activity.image}}" 
+                  data-describe="{{item.activity.name}}"
+                  bindtap="showShare"
+                  data-path="../../plans/active-detail/active-detail?id={{item.activity.id}}">
+              <image class='like-ico y-rmar10' src="../../../images/share.png" />
+              <view class='num'>单独分享</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="bottom-row y-bgw">
+  <view bindtap="showShare"
+        data-shareimg="{{plan.image}}" 
+        data-describe="{{plan.title}}"
+        data-path="{{localPath}}"
+        data-id="sharePlanBtn"
+  >生成图片分享</view>
+</view>
+
+
+
+<share wx:if="{{maskShow}}"
+       bind:parentMaskTap="maskTap"
+       maskShow="{{maskShow}}"
+       shareimg="{{shareObj.shareimg}}"
+       describe="{{shareObj.describe}}"
+       page="{{pathArr}}">
+</share>
+
+<!-- <login></login> -->

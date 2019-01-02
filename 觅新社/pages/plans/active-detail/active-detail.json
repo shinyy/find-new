@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "navigationBarTitleText": "活动详情",
+  "usingComponents": {
+    "list": "/components/list/list",
+    "share":"/components/share/share"    
+  }
+}

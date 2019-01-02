@@ -1,0 +1,58 @@
+<view class="y-lrpad40">
+  <view class="login-row y-grid y-bgw y-alignc">
+    <image src="{{avatarUrl}}" />
+    <view class="txt">
+      <view class="t1">{{nickName}}</view>
+      <view class="t2">文玩礼仪·觅新精选</view>
+    </view>
+  </view>
+  <view class="tools-block y-grid y-alignc y-j-s">
+    <navigator url="../my-plan/my-plan">
+      <image src="../../../images/tool1.png" />
+      <view >我的觅新</view>
+    </navigator>
+    <navigator url="../my-plan/my-plan">
+      <image src="../../../images/tool2.png" />
+      <view >历史觅新</view>
+    </navigator>
+    <navigator url="../collection/collection">
+      <image src="../../../images/tool3.png" />
+      <view >我的收藏</view>
+    </navigator>
+    <navigator url="../add/add">
+      <image src="../../../images/tool4.png" />
+      <view >帮觅新</view>
+    </navigator>
+  </view>
+  <view class="other">
+    <navigator class="nav-row y-grid y-alignc y-j-s" url="../feedback/feedback">
+      <view class="y-grid y-alignc">
+        <image src="../../../images/my-ico1.png" class="ico" />
+        <view class="txt">建议与反馈</view>
+      </view>
+      <image src="../../../images/arr-right.png" class="arr-right"/>
+    </navigator>
+    <view class="nav-row y-grid y-alignc y-j-s">
+      <view class="y-grid y-alignc">
+        <image src="../../../images/my-ico2.png" class="ico" />
+        <view class="txt">在线客服</view>
+      </view>
+      <!-- <image src="../../../images/arr-right.png" class="arr-right"/> -->
+      <contact-button type="default-dark" size="20" session-from="weapp"></contact-button>
+    </view>
+    <navigator class="nav-row y-grid y-alignc y-j-s" url="../kf/kf">
+      <view class="y-grid y-alignc">
+        <image src="../../../images/my-ico3.png" class="ico" />
+        <view class="txt">专属客服</view>
+      </view>
+      <image src="../../../images/arr-right.png" class="arr-right"/>
+    </navigator>
+    <navigator class="nav-row y-grid y-alignc y-j-s" url="../setting/setting">
+      <view class="y-grid y-alignc">
+        <image src="../../../images/my-ico4.png" class="ico" />
+        <view class="txt">设置</view>
+      </view>
+      <image src="../../../images/arr-right.png" class="arr-right"/>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,181 @@
+<!-- 授权弹窗 -->
+     <view class="mask {{showAuthority?'':'hide'}}">
+       <button open-type='getUserInfo' lang='zh_CN' class="getUserInfoBtn" bindgetuserinfo="getSecret">请授权</button> 
+    </view>   
+  <!-- 授权弹窗 -->
+<image src="../../../images/refresh.png" class="refreshImg"/>
+<view class="body">
+  <view class="header y-grid y-alignc">
+    <navigator class="local y-grid y-alignc y-j-c" url="../address/address">
+      <text class="y-rmar10">{{cityName}}</text>
+      <!-- <view class="arr-down" style="background: url(../../../images/icons.png) -6rpx -6rpx no-repeat;background-size:300rpx;"></view> -->
+      <image src="../../../images/arr-down.png" class="arr-down"/>
+    </navigator>
+    <view class="search-box y-grid y-alignc y-j-c">
+      <!-- <view class="search-ico y-rmar10" style="background: url(../../../images/icons.png) -37rpx -28rpx no-repeat;background-size:300rpx;"></view> -->
+      <image src="../../../images/search.png" class="search-ico"/>
+      <input placeholder="搜索你的知觅" disabled bindtap="toSearch"/>
+    </view>
+  </view>
+  <view class="section y-bgw y-bmar20">
+    <view class="tit-row y-grid y-alignc y-j-s">
+      <!-- <view class="y-grid">
+        <view class="h1">
+          觅新日历·
+          <view class="bottom-ico"></view>
+        </view>
+        <text class="h2">八月入秋初微凉</text>
+      </view> -->
+      <image src="../../../images/til1.png" class="til-bg"/>
+      <navigator class="y-grid y-alignc" url="../mxCalendar-test/mxCalendar">
+        <view class="y-rmar10">查看整月</view>
+        <!-- <view class="arr-right" style="background: url(../../../images/icons.png) -36rpx -2rpx no-repeat;background-size:300rpx;"></view> -->
+        <image src="../../../images/arr-right.png" class="arr-right" />
+      </navigator>
+    </view>
+    <view >
+      <scroll-view class="cal-row" scroll-x="true">
+        <view class="li {{ymdIndex==index?'cur':''}}" wx:for="{{ymd}}" data-d="{{item}}" data-index="{{index}}" bindtap="dateTap">
+          <view >{{day[dayTrue[index]]}}</view>
+          <view >{{dTrue[index]}}</view>
+        </view>
+    </scroll-view>
+    </view>
+    <scroll-view class="pd-list" scroll-x="true" >
+      <navigator class="li">
+        <image src="../../../images/pd.png" />
+        <view >全场七五折</view>
+      </navigator>
+      <navigator class="li">
+        <image src="../../../images/pd.png" />
+        <view >全场七五折</view>
+      </navigator>
+      <navigator class="li" wx:for="{{20}}">
+        <image src="../../../images/pd.png" />
+        <view >全场七五折</view>
+      </navigator>
+    </scroll-view>
+  </view>
+
+  <view class="section y-bgw y-bmar20 y-bpad20">
+    <view class="tit-row y-grid y-alignc y-j-s">
+      <image src="../../../images/til2.png" class="til-bg"/>
+    </view>
+    <view class="inner">
+      <view class="type-block y-bmar20">
+        <view class="tit-row y-grid y-alignc y-j-s">
+          <view class="til-txt">社长推荐</view>
+          <navigator class="y-grid y-alignc" url="../recommend/recommend?type=activity_recommend">
+            <view class="y-rmar10">更多</view>
+            <!-- <view class="arr-right" style="background: url(../../../images/icons.png) -36rpx -2rpx no-repeat;background-size:300rpx;"></view> -->
+            <image src="../../../images/arr-right.png" class="arr-right" />
+          </navigator>
+        </view>
+        <navigator class="y-lrpad20" data-id="{{sztj.id}}" url="../../plans/active-detail/active-detail?id={{sztj.id}}">
+          <!-- <image class="type-img1"  src="../../../images/bannerbg.png"/>
+          <view class="h3 line-clamp-2">三生三世十里桃花，莞城春季特色主题餐厅，小憩私密幽会最佳莞城春季特色主题餐厅，小憩私密幽会最佳</view> -->
+          <image class="type-img1"  src="{{sztj.image}}"/>
+          <view class="h3 line-clamp-2">{{sztj.name}}</view>
+        </navigator>
+      </view>
+      <view class="type-block y-bmar20">
+        <view class="tit-row y-grid y-alignc y-j-s">
+          <view class="til-txt">觅友分享</view>
+          <navigator class="y-grid y-alignc" url="../recommend/recommend?type=activity_share">
+            <view class="y-rmar10">更多</view>
+            <!-- <view class="arr-right" style="background: url(../../../images/icons.png) -36rpx -2rpx no-repeat;background-size:300rpx;"></view> -->
+            <image src="../../../images/arr-right.png" class="arr-right" />
+          </navigator>
+        </view>
+        <view class="ul y-lrpad20 y-grid y-j-s">
+          <!-- <navigator class="li">
+            <image src="../../../images/111.jpg" />
+            <view class="h3 line-clamp-2">三生三世十里桃花,莞城春季特色主题餐厅</view>
+          </navigator> -->
+          <navigator class="li" wx:for="{{myfx}}" data-id="{{item.id}}" url="../../plans/active-detail/active-detail?id={{item.id}}">
+            <image src="{{item.image}}" />
+            <view class="h3 line-clamp-2">{{item.name}}</view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="section y-bgw">
+    <!-- 非组件 先保留 -->
+    <!-- <view class="tab-nav y-grid y-j-c y-bmar30">
+      <view class="li {{tabIndex==index?'cur':''}}" wx:for="{{tab}}" wx:for-index="index" data-id="{{index}}" bindtap="tab">{{item}}</view>
+    </view> -->
+    <tab tabNav="{{tab}}" tabIndex="0" bind:parentTabTap="tabTap"></tab>
+    <view class="tab-inner bs-list" wx:if="{{tabIndex==0}}">
+      <list wx:for="{{list}}"
+            name="{{item.plan_title}}"
+            ID="{{item.id}}"
+            favorite_num="{{item.favorite_num}}"
+            forward_num="{{item.forward_num}}"
+            bind:parentShowShare="showShare"
+            aid="{{item.aid}}"
+            act_id="{{item.act_id}}"
+            fid="{{item.fid}}"
+            tid="{{item.tid}}"
+            is_favorite="{{item.is_favorite}}"
+            index="{{index}}"
+            showType="type1" 
+            navUrl="../../my/my-plan-detail/my-plan-detail?attribute={{item.aid}}&fid={{item.fid}}&act_id={{item.act_id}}&tid={{item.tid}}" 
+            logo="{{item.image}}"
+            active="{{item.attribute}}"
+            price="{{item.price}}"
+            ></list>
+    </view>
+    <view class="tab-inner bs-list" wx:if="{{tabIndex!=0}}">
+      <!-- <view class="li">
+        <navigator class="y-bmar20">
+          <image  src="../../../images/banner.jpg"/>
+          <view class="h3 line-clamp-2">在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳</view>
+          <view class='m'>预计人均<text >￥500</text></view>
+        </navigator>
+        <view class="y-grid  y-alignc y-j-s">
+          <view class="y-grid">
+            <view class="mark">本周精选</view>
+            <view class="mark">美女聚集</view>            
+          </view>
+          <view class="y-grid">
+            <view class="y-grid y-alignc y-rmar38">
+                <image class='like-ico y-rmar10' src="../../../images/share.png"/>
+                <view class='num'>236</view>
+            </view>
+            <view class="y-grid y-alignc">
+               <image class='like-ico y-rmar10' src="../../../images/like.png"/>
+                <view class="num">1236</view>
+            </view>
+          </view>
+        </view>
+      </view> -->
+      <!-- <list wx:for="{{list}}"
+            showType="type1" 
+            navUrl="../../plans/active-detail/active-detail" 
+            name="{{item.name}}"
+            logo="{{item.logo}}"
+            ID="{{item.id}}"
+            bind:parentShowShare="showShare"
+            is_favorite="{{item.is_favorite}}"              
+            ></list> -->
+      <shopList wx:for="{{list}}"
+            showType="type1" 
+            navUrl="../../my/detail/detail?id={{item.id}}" 
+            name="{{item.name}}"
+            logo="{{item.image}}"
+            ID="{{item.id}}"
+            bind:parentShowShare="showShare"
+            is_favorite="{{item.is_favorite}}"
+            index="{{index}}"              
+            ></shopList>
+    </view>
+  </view>
+</view>
+<share wx:if="{{maskShow}}"
+       bind:parentMaskTap="maskTap"
+       maskShow="{{maskShow}}"
+       shareimg="{{shareObj.shareimg}}"
+       describe="{{shareObj.describe}}"
+       page="{{pathArr}}">
+</share>

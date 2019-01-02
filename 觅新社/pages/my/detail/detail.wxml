@@ -1,0 +1,50 @@
+<!-- 授权弹窗 -->
+     <view class="mask {{showAuthority?'':'hide'}}">
+       <button open-type='getUserInfo' lang='zh_CN' class="getUserInfoBtn" bindgetuserinfo="getSecret">请授权</button> 
+    </view>   
+  <!-- 授权弹窗 -->
+<view class="body">
+  <view class="bs-list y-bgw y-tmar20">
+    <view class="li">
+      <navigator class="y-bmar20">
+        <view class="h3 line-clamp-2">
+          <!-- 在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳 -->
+          {{info.title}}
+        </view>
+        <!-- <image src="../../../images/banner.jpg" /> -->
+         <image src="{{info.image}}" />
+      </navigator>
+    </view>
+    <view>
+      <view class="section sp y-bgw">
+        <view class="til-row y-grid">
+          <view class="h3">商家详情描述</view>
+        </view>
+        <view class="inner">
+          <view class="txt">
+            <!-- 那么拼多多商家就想知道怎么刷单,西西小编在这里跟大家分享一下拼多多商家刷单规则介绍,有需要的伙伴来西西看看吧!拼多多商家怎么刷单?不论在线上还是线下的实体店铺购买东西,索要发票是一件比较重要的事,可以为我们的消费权益.是每一个品牌和商家都需要重视和建设的能力。 -->
+            <import src="../../../wxParse/wxParse.wxml"></import>
+            <template is="wxParse" data="{{wxParseData:t.nodes}}"></template>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <list showType="type2"></list> -->
+  </view>
+  <view class="section y-bgw">
+    <view class="til-row y-grid">
+      <view class="h3">商家信息</view>
+    </view>
+    <view class="inner">
+      <!-- <image src="../../../images/buslogo.jpg" class="buslogo" /> -->
+      <image src="{{info.logo}}" class="buslogo" />      
+      <view class="h4">{{info.name}}</view>
+      <view class="h5">{{info.address}}</view>
+      <view class="tool-row y-grid y-alignc y-j-s">
+        <image src="../../../images/local.png" class="local" bindtap="openLocation"/>
+        <view class="border"></view>
+        <image src="../../../images/phone.png" class="phone" bindtap="call" data-phone="{{info.phone}}"/>
+      </view>
+    </view>
+  </view>
+</view>

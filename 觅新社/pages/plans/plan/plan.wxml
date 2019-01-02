@@ -1,0 +1,189 @@
+<view class="body">
+  <view class="tab-nav y-grid y-j-c">
+    <view class="li {{tabIndex==index?'cur':''}}" wx:for="{{tab}}" wx:for-index="index" data-id="{{index}}" bindtap="tab">
+      {{item}}
+    </view>
+    <!-- <view class="cur li">行程规划</view>
+      <view class="li">预约活动</view> -->
+  </view>
+  <view wx:if="{{tabIndex==0}}">
+    <view class="content y-bgw">
+      <view class="dl">
+        <view class="dt">我想要做什么？</view>
+        <view class="dd type1">
+          <!-- <view class="cur">游玩</view>
+          <view>游玩</view>
+          <view>游玩</view>
+          <view>游玩</view>
+          <view>游玩</view>
+          <view>游玩</view> -->
+          <view wx:for="{{attr}}" class="{{index==attrIndex?'cur':''}}" bindtap='tapAttr1' data-id="{{index}}" data-feature="{{item.id}}">
+            {{attr[index].name}}
+          </view>
+        </view>
+      </view>
+      <view class="dl" wx:if="{{attrIndex!=null}}">
+        <view class="dt">我想要的行程功能？</view>
+        <view class="dd type1">
+          <!-- <view>游玩</view>
+          <view>游玩</view>
+          <view>游玩</view>
+          <view>游玩</view>
+          <view>游玩</view>
+          <view>游玩</view> -->
+          <!-- <view wx:for="{{attr[0].attr}}" class="{{attr[0].attr[index].active?'cur':''}}" bindtap='tapAttr2' data-id="{{index}}">
+          {{attr[0].attr[index].name}}
+          </view> -->
+          <view wx:for="{{underAttr}}" class="{{underAttr[index].active?'cur':''}}" bindtap='tapAttr2' data-id="{{index}}">
+            {{underAttr[index].name}}
+          </view>
+        </view>
+      </view>
+      <view class="dl" wx:if="{{firstAttr.length>0}}">
+        <view class="dt">我已选择的类型？（按选择顺序完成排序）</view>
+        <view class="dd type2">
+          <!-- <view>
+            <view class="active-content">吃饭</view>
+            <view class="first">优先一</view>
+          </view>
+          <view>
+            <view class="active-content">吃饭</view>
+            <view class="first">优先二</view>
+          </view>
+          <view>
+            <view class="active-content">吃饭</view>
+            <view class="first">优先三</view>
+          </view>
+          <view>
+            <view class="active-content">吃饭</view>
+            <view class="first">优先四</view>
+          </view>
+          <view>
+            <view class="active-content">吃饭</view>
+            <view class="first">优先五</view>
+          </view> -->
+          <view wx:for="{{firstAttr}}">
+            <view class="active-content">{{firstAttr[index].name}}</view>
+            <view class="first">优先{{index+1}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="dl">
+        <view class="dt">选择日期</view>
+        <view class="dd type1">
+          <view data-index="0" class="{{dateIndex==0?'cur':''}}" data-d="{{today}}" bindtap='selectDate'>
+            今天
+          </view>
+          <view data-index="1" class="{{dateIndex==1?'cur':''}}" data-d="{{tomorrow}}" bindtap='selectDate'>
+            明天
+          </view>
+          <view data-index="2" class="{{dateIndex==2?'cur':''}}" data-d="{{afterTomorrow}}" bindtap='selectDate'>
+            后天
+          </view>
+          <view data-index="3" class="{{dateIndex==3?'cur':''}}" bindtap="redefine">重新定义</view>
+        </view>
+        <view class="select-date">已选{{date}}</view>
+      </view>
+    </view>
+    <view class="bottom-row y-grid y-j-s">
+      <view wx:if="{{attributeId.length<2}}" url="../use-plan/use-plan" bindtap="alert">生成规划</view>
+      <!-- <navigator wx:if="{{attributeId.length>0}}" url="../select-plan/select-plan?feature={{attrIndex}}&attribute={{attributeIdStr}}&date={{date}}">
+        生成规划
+      </navigator> -->
+      <navigator wx:if="{{attributeId.length>=2}}" url="../select-plan/select-plan" bindtap="saveAttrInfo">
+        生成规划
+      </navigator>
+      <navigator>手动填充规划</navigator>
+    </view>
+  </view>
+  <view wx:if="{{tabIndex==1}}">
+    <view class="bs-list y-bgw y-tmar20">
+      <!-- <view class="li">
+        <navigator class="y-bmar20" url="../active-detail/active-detail">
+          <image src="../../../images/banner.jpg" />
+          <view class="h3 line-clamp-2">
+            在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳
+          </view>
+        </navigator>
+        <view class="y-grid  y-alignc y-j-s">
+          <view class="y-grid">
+            <view class="mark">本周精选</view>
+            <view class="mark">约会</view>
+          </view>
+          <view class="y-grid">
+            <view class="y-grid y-alignc y-rmar38">
+              <image class='like-ico y-rmar10' src="../../../images/share.png" />
+              <view class='num'>2361</view>
+            </view>
+            <view class="y-grid y-alignc">
+              <image class='like-ico y-rmar10' src="../../../images/like.png" />
+              <view class="num">1236</view>
+            </view>
+          </view>
+        </view>
+      </view> -->
+      <!-- <list wx:for="{{list.data}}" 
+            navUrl="../active-detail/active-detail" 
+            logo="{{item.image}}"
+            name="{{item.name}}"
+            forward_num="{{item.forward_num}}"
+            favorite_num="{{item.favorite_num}}"
+            bind:parentShowShare="showShare"
+            is_favorite="{{item.is_favorite}}"
+            ></list> -->
+     <actList wx:for="{{list.data}}" 
+            navUrl="../active-detail/active-detail?id={{item.id}}" 
+            path="pages/plans/active-detail/active-detail?id={{item.id}}"
+            logo="{{item.image}}"
+            name="{{item.name}}"
+            forward_num="{{item.forward_num}}"
+            favorite_num="{{item.favorite_num}}"
+            bind:parentShowShare="showShare"
+            is_favorite="{{item.is_favorite}}"
+            ID="{{item.id}}"
+            index="{{index}}"
+            ></actList>
+    </view>
+  </view>
+</view>
+<view class="mask" bindtap="hideMask" wx:if="{{showMask}}">
+  <view class="calendar" catchtap="calTap">
+    <view class="cal-inner">
+      <scroll-view class="cal-scroll" scroll-y>
+        <view class="cal-box" wx:for-index="calIdx">
+          <view class="mth y-grid y-lrpad20">
+            <view bindtap="prevM">上月</view>
+            <view class="y-flex1">{{y}}年{{m}}月</view>
+            <view bindtap="nextM">下月</view>
+          </view>
+          <view class="thead y-grid y-textc">
+            <view class="y-flex1">SUN</view>
+            <view class="y-flex1">MON</view>
+            <view class="y-flex1">TUE</view>
+            <view class="y-flex1">WED</view>
+            <view class="y-flex1">THU</view>
+            <view class="y-flex1">FRI</view>
+            <view class="y-flex1">SAT</view>
+          </view>
+          <view class="dtd">
+            <!-- 月头空格 -->
+            <view wx:for="{{day}}" class="td fl"></view>
+            <!-- 真正的日历 -->
+            <view wx:for="{{daycount[m-1]}}" wx:for-index="dIdx" class="td fl {{dTure>dIdx+1&&mTure==m&&yTure==y?'dis':''}} {{dCur==dIdx+1&&mCur==m&&yCur==y?'in':''}}" bindtap="dateTap" data-d="{{y+'-'+m+'-'+(dIdx+1)}}">
+              <view>{{dIdx+1}}</view>
+              <!-- <view>{{dCur==dIdx+1&&mCur==m[calIdx]&&yCur==y[calIdx]?'选择':''}}</view> -->
+              <!-- <view>{{dNext==dIdx+1&&mCur2==m[calIdx]&&yCur==y[calIdx]?'离店':''}}</view> -->
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+<share wx:if="{{maskShow}}"
+       bind:parentMaskTap="maskTap"
+       maskShow="{{maskShow}}"
+       shareimg="{{shareObj.shareimg}}"
+       describe="{{shareObj.describe}}"
+       page="{{pathArr}}">
+</share>

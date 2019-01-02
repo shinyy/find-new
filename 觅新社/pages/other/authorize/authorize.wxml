@@ -1,0 +1,5 @@
+<!-- 授权弹窗 -->
+     <view class="mask {{showAuthority?'':'hide'}}">
+       <button open-type='getUserInfo' lang='zh_CN' class="getUserInfoBtn" bindgetuserinfo="getSecret">请授权</button> 
+    </view>   
+  <!-- 授权弹窗 -->

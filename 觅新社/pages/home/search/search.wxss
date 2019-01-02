@@ -1,0 +1,6 @@
+/* pages/home/search/search.wxss */
+@import '../address/address.wxss';
+/* .search-bg{
+  padding-left: 20rpx;
+  box-sizing: border-box;
+} */

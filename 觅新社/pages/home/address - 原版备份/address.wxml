@@ -1,0 +1,39 @@
+<!-- <view class="body"> -->
+<scroll-view  class="body" scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true" >
+  <view class="search-row y-grid y-alignc">
+    <view class="search-bg y-grid y-j-c y-alignc">
+      <image class="search-ico" src="../../../images/search.png" />
+      <input placeholder="搜索城市" bindconfirm="search"/>
+    </view>
+    <!-- <view class="cancel">取消</view> -->
+    <view class="cancel" bindtap="gotoIndex">取消</view>
+  </view>
+  <view class="local-row y-grid y-alignc" bindtap="reLocal">
+    <image class="local-ico" src="../../../images/locals.png" />
+    <view class="now-local">当前定位{{cityStr}}</view>
+  </view>
+  <view >
+    <view class="dl" wx:for="{{city}}" id="{{index}}">
+      <view class="dt">{{index}}</view>
+      <view class="dd">
+        <view class="li" 
+              wx:for="{{item}}" 
+              wx:for-item="cityName" 
+              bindtap="gotoIndex" 
+              data-city="{{cityName.region_name}}"
+              data-lat="{{cityName.latitude}}"
+              data-lng="{{cityName.longitude}}">
+              {{cityName.region_name}}
+              </view>
+      </view>
+    </view>
+  </view>
+<!-- </view> -->
+</scroll-view>
+<view class="index">
+  <view bindtap='jumpTo' data-opt="{{item}}" wx:for="{{cityIndex}}">{{item}}</view>
+</view>
+
+<view class="search-box">
+  <view class="li">广州</view>
+</view>

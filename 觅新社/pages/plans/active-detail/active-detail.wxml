@@ -1,0 +1,99 @@
+<!-- 授权弹窗 -->
+     <view class="mask {{showAuthority?'':'hide'}}">
+       <button open-type='getUserInfo' lang='zh_CN' class="getUserInfoBtn" bindgetuserinfo="getSecret">请授权</button> 
+    </view>   
+  <!-- 授权弹窗 -->
+<view class="body">
+  <view class="bs-list y-bgw y-tmar20">
+    <!-- <view class="li">
+      <navigator class="y-bmar20">
+        <image src="../../../images/banner.jpg" />
+        <view class="h3 line-clamp-2">
+          在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳
+        </view>
+      </navigator>
+      <view class="y-grid  y-alignc y-j-s">
+        <view class="y-grid">
+          <view class="y-grid y-alignc y-rmar38">
+            <view class="t">分享</view>
+            <view class='num'>236</view>
+          </view>
+          <view class="y-grid y-alignc">
+            <view class="t">收藏</view>
+            <view class="num">1236</view>
+          </view>
+        </view>
+      </view>
+    </view> -->
+    <list showType="type2"
+          name="{{detail.name}}"
+          logo="{{detail.image}}"
+          favorite_num="{{detail.favorite_num}}"
+          forward_num="{{detail.forward_num}}"></list>
+  </view>
+  <view class="section y-bgw">
+    <view class="til-row y-grid">
+      <view class="h3">商家详情描述</view>
+    </view>
+    <view class="inner">
+      <view class="none" wx:if="{{!detail.description}}">商家还没有描述！</view>
+      <view class="txt" wx:if="{{detail.description}}">
+        <!-- 那么拼多多商家就想知道怎么刷单,西西小编在这里跟大家分享一下拼多多商家刷单规则介绍,有需要的伙伴来西西看看吧!拼多多商家怎么刷单?不论在线上还是线下的实体店铺购买东西,索要发票是一件比较重要的事,可以为我们的消费权益.是每一个品牌和商家都需要重视和建设的能力。 -->
+        <import src="../../../wxParse/wxParse.wxml"></import>
+        <template is="wxParse" data="{{wxParseData:t.nodes}}"></template>
+      </view>
+    </view>
+  </view>
+  <view class="section y-bgw">
+    <view class="til-row y-grid">
+      <view class="h3">商家信息</view>
+    </view>
+    <view class="inner">
+      <!-- <image src="../../../images/buslogo.jpg" class="buslogo" />
+      <view class="h4">雨樱好粥道主题餐厅</view>
+      <view class="h5">广东省东莞市南城区体育路鸿禧中心一楼03铺位</view> -->
+      <image src="{{detail.shop.logo}}" class="buslogo" />
+      <view class="h4">{{detail.shop.name}}</view>
+      <view class="h5">{{detail.shop.address}}</view>
+      <view class="tool-row y-grid y-alignc y-j-s">
+        <image src="../../../images/local.png" class="local" bindtap="openLocation"/>
+        <view class="border"></view>
+        <image src="../../../images/phone.png" class="phone" data-phone="{{detail.shop.phone}}" bindtap="call"/>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="section y-bgw">
+    <view class="til-row y-grid y-j-s y-alignc">
+      <view class="h3">活动参与名单</view>
+      <view class="prize">中奖名单（8月15日12:00公布）</view>
+    </view>
+    <view class="inner">
+      <view class="none">哇，时候未到啦！亲，别急！~</view>
+      <view class="prize-list">
+        <view wx:for="{{20}}">
+          <view class="prize-img"><image src="../../../images/pd.png" /></view>
+          <view class="prize-name">这就是中奖用户这就是</view>
+        </view>
+      </view>
+    </view>
+  </view> -->
+  <view class="bottom-row y-grid y-alignc">
+    <view class="btn sp" wx:if="{{is_reserve==0}}">无需预约</view>
+    <navigator class="btn" url="../share-info/share-info" wx:if="{{is_reserve==1}}">参加活动</navigator>
+    <image src="../../../images/bigshare.png" 
+           bindtap="showShare"
+           data-shareimg="{{detail.image}}"
+           data-describe="{{detail.name}}"/>
+    <image src="{{is_favorite==0?'../../../images/biglike.png':'../../../images/bigliked.png'}}" bindtap="collect" />
+  </view>
+</view>
+
+
+<share wx:if="{{maskShow}}"
+       bind:parentMaskTap="maskTap"
+       maskShow="{{maskShow}}"
+       shareimg="{{shareObj.shareimg}}"
+       describe="{{shareObj.describe}}"
+       page="{{pathArr}}"
+       >
+</share>

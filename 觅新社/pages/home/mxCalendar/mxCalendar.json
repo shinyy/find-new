@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "listtow":"/components/list2/list2"
+  }
+}

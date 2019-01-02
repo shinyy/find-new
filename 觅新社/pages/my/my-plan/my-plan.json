@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "navigationBarTitleText": "我的规划",
+  "usingComponents": {
+    "listtwo": "/components/list2/list2",    
+    "tab": "/components/tab/tab"
+  }
+}

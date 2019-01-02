@@ -1,0 +1,5 @@
+.recommend-list{
+  padding: 0 20rpx;
+  background: #fff;
+}
+  

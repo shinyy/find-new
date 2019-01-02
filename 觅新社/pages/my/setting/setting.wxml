@@ -1,0 +1,24 @@
+<!-- 授权弹窗 -->
+     <!-- <view class="mask {{showAuthority?'':'hide'}}">
+       <button open-type='getUserInfo' lang='zh_CN' class="getUserInfoBtn" bindgetuserinfo="getSecret">请授权</button> 
+    </view>    -->
+  <!-- 授权弹窗 -->
+  <view class="body">
+    <view class="section y-bgw">
+      <navigator class="y-grid li y-alignc y-j-s" url="../change-phone/change-phone">
+        <!-- <view class="til">绑定/换绑手机</view> -->
+        <view class="til">{{type==0?'绑定':'换绑'}}手机</view>        
+        <view class="y-grid y-alignc">
+          <view class="t">{{type==0?'去绑定':phone}}</view>
+          <image src="../../../images/arr-right.png" class="arr-right" />
+        </view>
+      </navigator>
+      <navigator class="y-grid li y-alignc y-j-s">
+        <view class="til">版本号</view>
+        <view class="y-grid y-alignc">
+          <view class="t">V1.0.1</view>
+          <image src="../../../images/arr-right.png" class="arr-right" />
+        </view>
+      </navigator>
+    </view>
+  </view>

@@ -1,0 +1,11 @@
+{
+    "component": true,
+    "navigationBarTitleText": "觅新社",
+    "usingComponents": {
+      "list": "/components/list/list",
+      "tab": "/components/tab/tab",
+      "share":"/components/share/share",
+      "shopList":"/components/shopList/list"
+    },
+    "enablePullDownRefresh": true
+  }

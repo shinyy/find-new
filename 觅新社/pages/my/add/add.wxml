@@ -1,0 +1,59 @@
+<view class="body">
+  <view class="upload-block">
+    <view class="inner">
+      <image src="../../../images/j.png" class="j-ico" bindtap="chooseImg"/>
+      <view class="t">推荐商家活动图</view>
+      <image src="{{img}}" wx:if="{{img!=''}}" class="topImg" bindtap="delImg"/>
+    </view>
+  </view>
+  <view class="h3">填写信息</view>
+  <view class="input-row y-bgw y-lpad20 y-bmar30">
+    <view class="y-grid li y-alignc y-j-s y-rpad30">
+        <view class="til-row sp y-grid y-alignc">
+          <image src="../../../images/must.png" />
+          <view>选择省市区</view>
+        </view>
+        <view class="y-grid">
+          <view class="region">
+            <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+              <view class="picker">
+              {{region[0]}}{{region[1]}}{{region[2]}}
+              </view>
+            </picker>
+          </view>
+          <!-- <image  /> -->
+        </view>
+      </view>
+      <view class="y-grid li y-alignc">
+        <view class="til-row sp y-grid y-alignc">
+          <image src="../../../images/must.png" />
+          <view>详细地址</view>
+        </view>
+        <input type="text" placeholder="请填写商家地址" bindinput="address" />
+      </view>
+      <view class="y-grid li y-alignc">
+        <view class="til-row sp y-grid y-alignc">
+          <image src="../../../images/must.png" />
+          <view>商家名</view>
+        </view>
+        <input type="text" placeholder="请填写商家名称" bindinput="shop_name"/>
+      </view>
+      <view class="y-grid li y-alignc">
+        <view class="til-row sp y-grid y-alignc">
+          <image src="../../../images/must.png" />
+          <view>联系人</view>
+        </view>
+        <input type="text" placeholder="请填写联系人姓名" bindinput="username" />
+      </view>
+      <view class="y-grid li y-alignc">
+        <view class="til-row sp y-grid y-alignc">
+          <image src="../../../images/must.png" />
+          <view>联系方式</view>
+        </view>
+        <input type="number" maxlength="11" placeholder="请填写手机号码" bindinput="phone"/>
+      </view>
+    </view>
+    <!-- <button form-type="submit">提交</button> -->
+      <button bindtap="submit">提交</button>  
+    
+</view>

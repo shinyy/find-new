@@ -1,0 +1,57 @@
+<view class="li y-grid {{showType=='mx'?'no-bor':''}}">
+  <navigator class="y-rmar20" url="{{navUrl}}">
+    <!-- <image src="../../images/pd.png" /> -->
+    <image src="{{imgUrl}}" />    
+  </navigator>
+  <view class="info y-flex1">
+    <navigator url="{{navUrl}}">
+      <!-- <view class="h3 line-clamp-2">在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密...</view> -->
+      <view class="h3 line-clamp-2">{{name}}</view>      
+      <view class="mark-row y-grid">
+        <view class="mark">优惠活动</view>
+        <view class="mark">约会</view>
+      </view>
+    </navigator>
+    <view class="p y-f30" wx:if="{{showType=='mx'}}">
+     <text class="t1">预计人均</text>
+     <text class="t2">￥500</text>
+    </view>
+    <view class="other-row y-grid y-alignc y-j-s">
+      <!-- <view class="time">仅限06-18</view> -->
+      <view class="time">仅限{{date}}</view>      
+      <view class="y-grid" wx:if="{{showType!='mx'}}">
+        <view class="y-grid y-alignc y-rmar38" bindtap="showShare" >
+          <image class='like-ico y-rmar10' src="../../images/share.png" />
+          <view class='num'>{{forwardNum}}</view>
+        </view>
+        <view class="y-grid y-alignc" bindtap="collect" data-id="{{ID}}" data-is_favorite="{{is_favorite}}">
+          <image class='like-ico y-rmar10' src="{{is_favorite==0?'../../images/like.png':'../../images/liked.png'}}" />
+          <view class="num">{{favoriteNum}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 原始对比 -->
+<!-- <view class="li y-grid">
+  <navigator class="y-rmar20">
+    <image src="../../images/pd.png" />
+  </navigator>
+  <view class="info y-bmar10">
+    <navigator>
+      <view class="h3 line-clamp-2">在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密...</view>
+      <view class="mark-row y-grid">
+        <view class="mark">优惠活动</view>
+        <view class="mark">约会</view>
+      </view>
+    </navigator>
+    <view class="p y-f30">
+     <text class="t1">预计人均</text>
+     <text class="t2">￥500</text>
+    </view>
+    <view class="other-row y-grid y-alignc y-j-s">
+      <view class="time">仅限06-18</view>
+    </view>
+  </view>
+</view> -->

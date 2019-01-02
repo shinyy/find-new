@@ -1,0 +1,47 @@
+@import '../feedback/feedback.wxss';
+.li{
+  padding-left: 0
+}
+.upload-block{
+  padding: 20rpx;
+  padding-bottom: 0;
+}
+.inner{
+  background: #fff;
+  height: 300rpx;
+  width: 100%;
+  padding-top: 100rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.j-ico{
+  width: 46rpx;
+  height: 46rpx;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10rpx;
+}
+.inner .t{
+  font-size: 30rpx;
+  color: #323233;
+  text-align: center;
+}
+.h3{
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #646466;
+  font-size: 26rpx;
+  padding-left: 20rpx;
+}
+.topImg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  top: 0;
+  left: 0;
+}
+.region{
+  font-size: 26rpx;
+  color: #969699;
+}

@@ -1,0 +1,55 @@
+<!-- <view class="mask" bindtap="maskTap" wx:if="{{maskShow}}"> -->
+<view class="mask" bindtap="maskTap">
+  <canvas  style="width: 470rpx;height: 667rpx;position:fixed;top:10%;left:50%;margin-left:-235rpx;z-index:999" canvas-id="mycanvas"/>
+  
+  <view class="inner" catchtap="test">
+    <!-- <image class="topimg" src="../../images/banner.jpg" /> -->
+    <image class="topimg" src="{{shareimg}}" />    
+    <view>
+      <view class="top-row y-grid y-alignc">
+        <!-- <image src="../../images/pd.png" /> -->
+        <image src="{{userinfo.avatarUrl}}" />        
+        <view class="txt">
+          <!-- <view>觅新·密语说</view> -->
+          <view>{{userinfo.nickName}}</view>          
+          <view>在觅新社发现了一个很不错的地方</view>
+        </view>
+      </view>
+      <view class="mid">
+        <view class="doubleD">
+          <image src="../../images/d.png" />
+        </view>
+        <view class="t">
+          <!-- 三生三世十里桃花，莞城春季特色主题餐厅，小憩私密幽会最佳。 -->
+          {{describe}}
+        </view>
+        <view class="doubleD">
+          <image class="fr" src="../../images/d.jpg" />
+        </view>
+      </view>
+      <view class="code-block y-grid y-alignc">
+        <image src="{{qrCode}}" />
+        <view class="txt2">
+          <view>长按小程序码</view>
+          <view >进入觅新社了解详情</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom" catchtap="test">
+    <view class="y-f30">分享到</view>
+    <view class="y-grid btn-row">
+      <view class="y-flex1">
+        <image src="../../images/download.png"  bindtap="createImg"/>
+        <view >下载保存图片</view>
+      </view>
+      <view class="y-flex1">
+        <image src="../../images/share2.png" />
+        <view >分享到好友</view>
+        <button open-type='share' class="shareBtn">
+          分享到好友
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

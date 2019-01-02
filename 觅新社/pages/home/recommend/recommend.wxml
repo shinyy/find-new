@@ -1,0 +1,54 @@
+<view class="body">
+  <view class="recommend-list">
+    <!-- <view class="li y-grid">
+      <navigator class="y-rmar20">
+        <image src="../../../images/pd.png" />
+      </navigator>
+      <view class="info">
+        <navigator>
+          <view class="h3 line-clamp-2">在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密...</view>
+          <view class="mark-row y-grid">
+            <view class="mark">优惠活动</view>
+            <view class="mark">约会</view>
+          </view>
+        </navigator>
+        <view class="other-row y-grid y-alignc y-j-s">
+          <view class="time">仅限06-18</view>
+          <view class="y-grid">
+            <view class="y-grid y-alignc y-rmar38">
+              <image class='like-ico y-rmar10' src="../../../images/share.png" />
+              <view class='num'>236</view>
+            </view>
+            <view class="y-grid y-alignc">
+              <image class='like-ico y-rmar10' src="../../../images/like.png" />
+              <view class="num">1236</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view> -->
+    <listtow wx:for="{{list.data.data}}" 
+            name="{{item.name}}" 
+            date="{{item.activity_date}}" 
+            favoriteNum="{{item.favorite_num}}" 
+            forwardNum="{{item.forward_num}}" 
+            imgUrl="{{item.image}}"
+            bind:parentShowShare="showShare"
+            is_favorite="{{item.is_favorite}}"
+            ID="{{item.id}}"
+            navUrl="{{'../../plans/active-detail/active-detail?id='+item.id}}"
+            >
+            
+      </listtow>
+  </view>
+</view>
+<!-- 向子组件传值maskShow -->
+<share maskShow="{{maskShow}}"
+       describe="{{shareObj.describe}}"
+       bind:parentMaskTap="maskTap"
+       shareimg="{{shareObj.shareimg}}"
+       wx:if="{{maskShow}}"
+       page="{{pathArr}}"
+       >
+      
+</share>

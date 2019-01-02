@@ -1,0 +1,73 @@
+<view class="body">
+  <view class="calendar">
+    <view class="cal-inner">
+      <scroll-view class="cal-scroll" scroll-y>
+        <!-- <view class="cal-box" wx:for="{{calNum}}" wx:for-index="calIdx"> -->
+        <view class="cal-box">        
+          <view class="mth y-grid y-lrpad20 y-j-c y-j-s">
+            <view bindtap="prevM">
+              <!-- <image src="../../../images/arr-right.png" class="arr-left" /> -->
+              上月
+            </view>
+            <view class="y-lrpad36">{{y}}年{{m}}月</view>
+            <view bindtap="nextM">
+              <!-- <image src="../../../images/arr-right.png" class="arr-right" /> -->
+              下月
+            </view>
+          </view>
+          <view class="thead y-grid y-textc">
+            <view class="y-flex1">SUN</view>
+            <view class="y-flex1">MON</view>
+            <view class="y-flex1">TUE</view>
+            <view class="y-flex1">WED</view>
+            <view class="y-flex1">THU</view>
+            <view class="y-flex1">FRI</view>
+            <view class="y-flex1">SAT</view>
+          </view>
+          <view class="dtd">
+            <!-- 月头空格 -->
+            <view wx:for="{{day}}" class="td fl"></view>
+            <!-- 真正的日历 -->
+            <view wx:for="{{daycount[m-1]}}" wx:for-index="dIdx" 
+                  class="td fl {{dTure>dIdx+1&&mTure==m&&yTure==y?'dis':''}} {{dCur==dIdx+1&&mCur==m&&yCur==y?'in':''}} {{dateObj[y+'-'+m+'-'+(dIdx+1)]?'cur':''}}"
+                  bindtap="dateTap" 
+                  data-d="{{y+'-'+m+'-'+(dIdx+1)}}">
+                <view class="t">{{dIdx+1}}</view>
+            </view>
+        </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="date-result" wx:if="{{selectDate.length>0}}">
+      <view class="til">已选日期（点击相应日期即可取消）：</view>
+      <view class="ul">
+        <view class="li" wx:for="{{selectDate}}" bindtap="delDate" data-date="{{item}}">{{item}}</view>
+      </view>
+    </view>
+    <view class="watch-btn" bindtap="cancelWatch" wx:if="{{selectDate.length>0}}">查看整月</view>
+    <!-- <view class="watch-btn" bindtap="cancelWatch" wx:if="{{watchAll==false}}">取消查看</view> -->
+  </view>
+  <view class="recommend-list">
+    <listtow wx:for="{{list}}" 
+             imgUrl="{{item.image}}" 
+             name="{{item.name}}"
+             date="{{item.activity_date}}"
+             favoriteNum="{{item.favorite_num}}"
+             forwardNum="{{item.forward_num}}"
+             ID="{{item.id}}"
+             is_favorite="{{item.is_favorite}}"
+             navUrl="{{'../../plans/active-detail/active-detail?id='+item.id}}"
+             bind:parentShowShare="showShare"             
+    ></listtow>
+  </view>
+</view>
+
+<share maskShow="{{maskShow}}"
+       describe="{{shareObj.describe}}"
+       shareimg="{{shareObj.shareimg}}"
+       bind:parentMaskTap="maskTap"
+       wx:if="{{maskShow}}"
+        page="{{pathArr}}"
+       >
+      
+</share>

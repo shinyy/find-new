@@ -1,0 +1,88 @@
+<view class="body">
+  <view class="y-bgw y-bmar20">
+    <tab tabNav="{{tab}}" tabIndex="0" bind:parentTabTap="getTabIndex"></tab>
+  </view>
+  <view class="bs-list y-bgw" wx:if="{{tabIndex==0}}">
+    <view class="li" wx:for="{{plan.data.data}}">
+        <navigator class="y-bmar20" url="../my-plan-detail/my-plan-detail?attribute={{item.aid}}&fid={{item.fid}}&act_id={{item.act_id}}&tid={{item.tid}}" >
+          <!-- <image src="../../../images/bannerbg.png" /> -->
+          <image src="{{item.image}}" /> 
+          <view class="text">
+            <view wx:for="{{item.attribute}}">
+              {{item.activity.name}}[{{item.name}}]
+            </view>
+          </view>          
+          <view class="h3 line-clamp-2">
+            <!-- 在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳 -->
+            {{item.plan_title}}
+          </view>
+          <view class="y-grid">
+            <view class="mark">本周精选</view>
+            <view class="mark">约会</view>
+          </view>
+        </navigator>
+        <view class="y-grid  y-alignc y-j-s">
+          <view class='m'>
+            预计人均
+            <text>￥{{item.price}}</text>
+          </view>
+          <view class="y-grid">
+            <view class="y-grid y-alignc y-rmar38" 
+                  bindtap="showShareNotC"
+                  data-path="pages/my/my-plan-detail/my-plan-detail?attribute={{item.aid}}&fid={{item.fid}}&act_id={{item.act_id}}&tid={{item.tid}}"
+                  data-shareimg="{{item.image}}"
+                  data-describe="{{item.plan_title}}">
+              <image class='like-ico y-rmar10' src="../../../images/share.png" />
+              <view class='num'>{{item.forward_num}}</view>
+            </view>
+            <view class="y-grid y-alignc" 
+                  bindtap="modalcnt" 
+                  data-attribute="{{item.aid}}"
+                  data-fid="{{item.fid}}"
+                  data-tid="{{item.tid}}"
+                  data-act_id="{{item.act_id}}"
+                  data-index="{{index}}"
+                  >
+              <image class='like-ico y-rmar10' src="../../../images/liked.png" />
+              <view class="num">{{item.favorite_num}}</view>
+            </view>
+            <!-- <view class="use-btn type2">使用规划</view> -->
+            <navigator class="use-btn type2"
+                       url="../../plans/plan-detail/plan-detail"
+              >使用规划</navigator>            
+          </view>
+        </view>
+      </view>
+  </view>
+  <view class="bs-list y-bgw" wx:if="{{tabIndex==1}}">
+    <!-- <list navUrl="../detail/detail"
+          wx:for="{{act.data.data}}"
+          name="{{item.name}}"
+          logo="{{item.image}}"
+          favorite_num="{{item.favorite_num}}"
+          forward_num="{{item.forward_num}}"
+          is_favorite="1"
+          bind:parentShowShare="showShare"  
+          ></list> -->
+    <actList navUrl="../../plans/active-detail/active-detail?id={{item.id}}"
+          path="pages/plans/active-detail/active-detail?id={{item.id}}"
+          wx:for="{{act.data.data}}"
+          name="{{item.name}}"
+          logo="{{item.image}}"
+          favorite_num="{{item.favorite_num}}"
+          forward_num="{{item.forward_num}}"
+          is_favorite="1"
+          bind:parentShowShare="showShare" 
+          ID="{{item.id}}" 
+          index="{{index}}"
+          ></actList>
+  </view>
+</view>
+<share wx:if="{{maskShow}}"
+       bind:parentMaskTap="maskTap"
+       maskShow="{{maskShow}}"
+       shareimg="{{shareObj.shareimg}}"
+       describe="{{shareObj.describe}}"
+       page="{{pathArr}}"
+       >
+</share>

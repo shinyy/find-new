@@ -1,0 +1,45 @@
+<view class="li">
+  <navigator class="y-bmar20" url="{{navUrl}}">
+    <!-- <image src="../../images/banner.jpg" /> -->
+    <image src="{{logo}}" />
+    <!-- <view class="h3 line-clamp-2">在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳</view> -->
+    <view class="h3 line-clamp-2">{{name}}</view>
+    <!-- <view class='m' wx:if="{{showType=='type1'}}">
+      预计人均
+      <text>￥5001</text>
+    </view> -->
+  </navigator>
+  <view class="y-grid  y-alignc y-j-s" wx:if="{{showType!='type2'}}">
+    <view class="y-grid">
+      <view class="mark">本周精选</view>
+      <view class="mark">美女聚集</view>
+    </view>
+    <view class="y-grid">
+      <view class="y-grid y-alignc y-rmar38" bindtap="showShare">
+        <image class='like-ico y-rmar10' src="../../images/share.png" />
+        <view class='num'>{{forward_num}}</view>
+      </view>
+      <view class="y-grid y-alignc" 
+            bindtap="collect" 
+            data-isfavorite="{{is_favorite}}" 
+            data-index="{{index}}" 
+            data-id="{{ID}}">
+        <!-- <image class='like-ico y-rmar10' src="../../images/like.png" /> -->
+        <image class='like-ico y-rmar10' src="{{is_favorite==0?'../../images/like.png':'../../images/liked.png'}}" />
+        <view class="num">{{favorite_num}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="y-grid  y-alignc y-j-s" wx:if="{{showType=='type2'}}">
+    <view class="y-grid">
+      <view class="y-grid y-alignc y-rmar38">
+        <view class="t">分享</view>
+        <view class='num'>{{forward_num}}</view>
+      </view>
+      <view class="y-grid y-alignc">
+        <view class="t">收藏</view>
+        <view class="num">{{favorite_num}}</view>
+      </view>
+    </view>
+  </view>
+</view>

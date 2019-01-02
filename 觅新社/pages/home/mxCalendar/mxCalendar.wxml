@@ -1,0 +1,42 @@
+<view class="body">
+  <view class="calendar">
+    <view class="cal-inner">
+      <scroll-view class="cal-scroll" scroll-y>
+        <view class="cal-box" wx:for="{{calNum}}" wx:for-index="calIdx">
+          <view class="mth y-grid y-lrpad20 y-j-c">
+            <view bindtap="prevM">
+              <image src="../../../images/arr-right.png" class="arr-left" />
+            </view>
+            <view class="y-lrpad36">{{y[calIdx]}}年{{m[calIdx]}}月</view>
+            <view bindtap="nextM">
+              <image src="../../../images/arr-right.png" class="arr-right" />
+            </view>
+          </view>
+          <view class="thead y-grid y-textc">
+            <view class="y-flex1">SUN</view>
+            <view class="y-flex1">MON</view>
+            <view class="y-flex1">TUE</view>
+            <view class="y-flex1">WED</view>
+            <view class="y-flex1">THU</view>
+            <view class="y-flex1">FRI</view>
+            <view class="y-flex1">SAT</view>
+          </view>
+          <view class="dtd">
+            <!-- 月头空格 -->
+            <view wx:for="{{day[calIdx]}}" class="td fl"></view>
+            <!-- 真正的日历 -->
+            <view wx:for="{{daycount[m[calIdx]-1]}}" wx:for-index="dIdx" class="td fl {{dTure>dIdx+1&&mTure==m[calIdx]&&yTure==y[calIdx]?'dis':''}} {{dCur==dIdx+1&&mCur==m[calIdx]&&yCur==y[calIdx]?'in':''}}" bindtap="dateTap" data-d="{{y[calIdx]+'-'+m[calIdx]+'-'+(dIdx+1)}}">
+              <view class="t">{{dIdx+1}}</view>
+              <!-- <view>{{dCur==dIdx+1&&mCur==m[calIdx]&&yCur==y[calIdx]?'选择':''}}</view> -->
+              <!-- <view>{{dNext==dIdx+1&&mCur2==m[calIdx]&&yCur==y[calIdx]?'离店':''}}</view> -->
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <navigator class="watch-btn">查看整月</navigator>
+  </view>
+  <view class="recommend-list">
+    <listtow wx:for="{{10}}"></listtow>
+  </view>
+</view>

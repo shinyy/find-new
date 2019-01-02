@@ -1,0 +1,5 @@
+<view class="tab-nav y-grid y-j-c {{noBmar?'':'y-bmar30'}}">
+  <view class="li {{tabIndex==index?'cur':''}}" wx:for="{{tabNav}}" wx:for-index="index" data-id="{{index}}" bindtap="tab">
+    {{item}}
+  </view>
+</view>

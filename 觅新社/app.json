@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/my/change-phone/change-phone",
+    
+    "pages/home/index/index",
+    
+    "pages/home/address/address",
+    
+    
+    "pages/plans/active-detail/active-detail",
+    "pages/my/feedback/feedback",
+    "pages/home/mxCalendar-test/mxCalendar",
+    "pages/home/search/search",
+    "pages/plans/plan/plan",
+    "pages/my/collection/collection",
+    "pages/home/recommend/recommend",
+    "pages/my/my-mx/my-mx",
+    "pages/my/my-plan/my-plan",
+    "pages/plans/share-info/share-info",
+    "pages/my/kf/kf",
+    "pages/my/my-plan-detail/my-plan-detail",
+    "pages/plans/plan-detail/plan-detail",
+    "pages/my/detail/detail",
+    "pages/plans/select-plan/select-plan",
+    "pages/other/authorize/authorize",
+    "pages/my/setting/setting",
+    "pages/my/add/add",
+    "pages/plans/use-plan/use-plan",
+    "pages/home/mxCalendar/mxCalendar",
+    "components/list/list",
+    "components/list2/list2",
+    "components/tab/tab",
+    "components/share/share",
+    "components/shopList/list",
+    "components/actList/list",
+    "components/login/login",
+    "pages/my/history/history"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#323233",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/index/index",
+        "iconPath": "images/tab1.png",
+        "selectedIconPath": "images/tab11.png",
+        "text": "觅新"
+      },
+      {
+        "pagePath": "pages/plans/plan/plan",
+        "iconPath": "images/tab2.png",
+        "selectedIconPath": "images/tab22.png",
+        "text": "我要规划"
+      },
+      {
+        "pagePath": "pages/my/my-mx/my-mx",
+        "iconPath": "images/tab3.png",
+        "selectedIconPath": "images/tab33.png",
+        "text": "我觅"
+      }
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+<view class="body">
+  <view class="y-bgw top-section">
+    <list showType="type2"
+          favorite_num="{{class.favorite_num}}"
+          forward_num="{{class.forward_num}}"
+          name="{{class.title}}"
+          logo="../../images/bannerbg.png"
+    ></list>
+  </view>
+  <view class="section y-bmar20">
+    <view class="y-bgw">
+      <!-- <tab tabNav="{{tab}}" tabIndex="0" noBmar="true"></tab> -->
+      <view class="tab-nav y-grid y-j-c">
+        <view class="li {{tabIndex==index?'cur':''}}" wx:for="{{class.attribute}}" wx:for-index="index" data-id="{{index}}" bindtap="tab" data-attrid="{{item.id}}">
+          {{item.name}}
+        </view>
+      </view>
+    </view>
+    <view class="now-select" wx:if="{{class.attribute[tabIndex].activity}}">
+     <view class="h3">我当前选择</view>
+      <view class="section type1">
+        <!-- <listtow></listtow> -->
+        <view class="li y-grid">
+          <navigator class="y-rmar20" url="../../plans/active-detail/active-detail?id={{class.attribute[tabIndex].activity.id}}">
+            <image src="{{class.attribute[tabIndex].activity.image}}" />
+          </navigator>
+          <view class="info y-flex1">
+            <navigator url="../../plans/active-detail/active-detail?id={{class.attribute[tabIndex].activity.id}}">
+              <!-- <view class="h3 line-clamp-2">在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密...</view> -->
+              <view class="h3 line-clamp-2">{{class.attribute[tabIndex].activity.name}}</view>
+              <view class="mark-row y-grid">
+                <view class="mark">优惠活动</view>
+                <view class="mark">约会</view>
+              </view>
+              <view class='m'>
+                预计人均
+                <text>￥{{class.attribute[tabIndex].activity.price}}</text>
+              </view>
+            </navigator>
+            <view class="other-row y-grid y-alignc y-j-s">
+             <!-- <view class="time">仅限{{class.attribute[tabIndex].activity.activity_date}}</view> -->
+              <view class="time">{{class.attribute[tabIndex].activity.activity_date}}</view>
+              <view class="y-grid">
+                <view class="y-grid y-alignc y-rmar38" 
+                      bindtap="showShare"
+                      data-shareimg="{{class.attribute[tabIndex].activity.image}}"
+                      data-describe="{{class.attribute[tabIndex].activity.name}}"
+                      data-path="pages/plans/active-detail/active-detail?id={{class.attribute[tabIndex].activity.id}}"
+                      >
+                  <image class='like-ico y-rmar10' src="../../../images/share.png" />
+                  <view class='num'>{{class.attribute[tabIndex].activity.forward_num}}</view>
+                </view>
+                <view class="y-grid y-alignc">
+                  <image class='like-ico y-rmar10'
+                         src="{{class.attribute[tabIndex].activity.is_favorite==0?'../../../images/like.png':'../../../images/liked.png'}}"
+                         bindtap="favoriteAct"
+                         data-is_favorite="{{class.attribute[tabIndex].activity.is_favorite}}"
+                         data-id="{{class.attribute[tabIndex].activity.id}}"/>
+                  <view class="num">{{class.attribute[tabIndex].activity.favorite_num}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="del-btn" bindtap="modalcnt" data-act_id="{{class.attribute[tabIndex].activity.id}}">删除此项规划</view>
+      </view>
+    </view>
+    <view class="other-select">
+      <view class="h3 y-lrpad20">我还可以选择</view>
+      <view class="y-bgw y-lrpad20">
+        <!-- <listtow wx:for="{{2}}"></listtow> -->
+        <view class="li y-grid" wx:for="{{list}}">
+          <navigator class="y-rmar20" url="../../plans/active-detail/active-detail?id={{item.id}}">
+            <!-- <image src="../../../images/pd.png" /> -->
+            <image src="{{item.image}}" />            
+          </navigator>
+          <view class="info y-flex1">
+            <navigator url="../../plans/active-detail/active-detail?id={{item.id}}">
+              <view class="h3 line-clamp-2">{{item.name}}</view>
+              <view class="mark-row y-grid">
+                <view class="mark">优惠活动</view>
+                <view class="mark">约会</view>
+              </view>
+            </navigator>
+            <view class="y-grid y-alignc y-j-s other-row2">
+              <view class="o">
+                <view class='m'>
+                  预计人均
+                  <text>￥{{item.price}}</text>
+                </view>
+                <view class="time">仅限{{item.activity_date}}</view>
+              </view>
+              <view class="save" data-id="{{item.id}}" bindtap="selectSave">选择并保存</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom-block">
+    <view class="top-row">
+      <view class="t">共有13000人使用此规划</view>
+      <view class="user-list">
+        <view class="list" wx:for="{{10}}"><image src="../../../images/pd.png" /></view>
+      </view>
+    </view>
+    <view class="bottom-row y-grid y-alignc">
+      <view class="btn sp" wx:if="{{class.is_reserve==0}}">无需预约</view>
+      <view class="btn" bindtap="join" wx:if="{{class.is_reserve==1}}">参加活动</view>
+      <image src="../../../images/bigshare.png" 
+             bindtap="showShare"
+             data-shareimg="../../images/bannerbg.png"
+             data-describe="{{class.title}}"/>
+      <image src="{{class.is_favorite==0?'../../../images/biglike.png':'../../../images/bigliked.png'}}"
+             data-is_favorite="{{class.is_favorite}}"
+             bindtap="favorite" />
+    </view>
+  </view>
+</view>
+<share wx:if="{{maskShow}}"
+       bind:parentMaskTap="maskTap"
+       maskShow="{{maskShow}}"
+       shareimg="{{shareObj.shareimg}}"
+       describe="{{shareObj.describe}}">
+</share>

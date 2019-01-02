@@ -1,0 +1,55 @@
+
+ @import "../../app.wxss";
+  .li{
+    padding-bottom: 50rpx;
+    
+  }
+  .li image{
+    width: 710rpx;
+    height: 300rpx;
+    margin-bottom: 10rpx;
+  }
+  .li .h3{
+    font-size: 32rpx;
+    /* font-weight: bold; */
+    line-height: 44rpx;
+    margin-bottom: 20rpx;
+  }
+  .li .m{
+    font-size:30rpx; 
+  }
+  .li .m text{
+    color: #e2320a;
+  }
+  .li .mark{
+    width: 110rpx;
+    height: 34rpx;
+    font-size: 26rpx;
+    line-height: 34rpx;
+    text-align: center;
+    border: 1rpx solid #646466;
+    color: #646466;
+    margin-right:20rpx;
+  }
+  /* .bs-list .li .share-ico{
+    width: 34rpx;
+    height: 34rpx;
+  } */
+  .li .like-ico{
+    width: 34rpx;
+    height: 34rpx;
+    margin-bottom: 0;
+  }
+  .li .num{
+    font-size:24rpx;
+    color: #323233;
+  }
+  .arr-right{
+    width: 10rpx;
+    height: 18rpx;
+  }
+  .li .t{
+    font-size:26rpx;
+    margin-right:10rpx;
+    color: #323233;
+  }

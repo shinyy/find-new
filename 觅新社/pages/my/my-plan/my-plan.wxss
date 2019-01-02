@@ -1,0 +1,127 @@
+/* pages/my/my-plan/my-plan.wxss */
+.li{
+  padding: 0  22rpx 30rpx 22rpx;   
+  margin-bottom: 20rpx;
+}
+.content{
+  background: #f5f5f5;
+  padding: 10rpx 20rpx 5rpx 20rpx;
+}
+.dt{
+  color: #969699;
+  font-size:26rpx; 
+  margin-bottom: 28rpx;
+}
+.list .t1{
+  color: #323233;
+  font-size: 30rpx;
+  width: 287rpx;
+}
+.list .t1 .num{
+  border: 2rpx solid #323233;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24rpx;
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+  font-size: 20rpx;
+}
+.list .t2{
+  color: #646466;
+  font-size: 26rpx;
+}
+.list{
+  margin-bottom: 30rpx;
+}
+.btn-row{
+  padding-top: 20rpx;
+}
+.b1{
+  width: 340rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  color: #969699;
+  text-align: center;
+  line-height: 80rpx;
+  border: 2rpx solid #969699;
+}
+.b2{
+  width: 340rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  color: #323233;
+  text-align: center;
+  line-height: 80rpx;
+  border: 2rpx solid #323233;
+}
+
+
+.pd-list .li{
+  /* padding-bottom: 50rpx; */
+  padding-top: 20rpx;
+  
+}
+.pd-list .li image{
+  width: 710rpx;
+  height: 300rpx;
+  margin-bottom: 10rpx;
+}
+.pd-list .li .h3{
+  font-size: 32rpx;
+  /* font-weight: bold; */
+  line-height: 44rpx;
+  margin-bottom: 20rpx;
+}
+.pd-list .li .m{
+  font-size:30rpx; 
+}
+.pd-list .li .m text{
+  color: #e2320a;
+}
+.pd-list .li .mark{
+  width: 110rpx;
+  height: 34rpx;
+  font-size: 26rpx;
+  line-height: 34rpx;
+  text-align: center;
+  border: 1rpx solid #646466;
+  color: #646466;
+  margin-right:20rpx;
+}
+/* .bs-list .li .share-ico{
+  width: 34rpx;
+  height: 34rpx;
+} */
+.pd-list .li .like-ico{
+  width: 34rpx;
+  height: 34rpx;
+  margin-bottom: 0;
+}
+.pd-list .li .num{
+  font-size:24rpx;
+  color: #323233;
+}
+.arr-right{
+  width: 10rpx;
+  height: 18rpx;
+}
+.pd-list .li .t{
+  font-size:26rpx;
+  margin-right:10rpx;
+  color: #323233;
+}
+.pd-list .li .tt{
+  font-size: 26rpx;
+  color: #969699;
+}
+.code{
+  font-size: 30rpx;
+}
+.code text:nth-child(1){
+  color: #323233;
+}
+.code text:nth-child(2){
+  color: #e2320a;
+}

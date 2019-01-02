@@ -1,0 +1,53 @@
+/* pages/my/my-mx/my-mx.wxss */
+.login-row image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right:20rpx;
+  border-radius: 50%;
+}
+.login-row .t1{
+  color: #323233;
+  font-size: 30rpx;
+  margin-bottom: 5rpx;
+}
+.login-row .t2{
+  color: #646466;
+  font-size: 26rpx;
+}
+.login-row{
+  margin-bottom: 60rpx;
+}
+.tools-block{
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  width: 670rpx;
+  height: 150rpx;
+  box-shadow:0 10rpx 10rpx rgba(0,0,0,0.1);
+  font-size:26rpx;
+  color:#323233;
+  margin-bottom: 10rpx; 
+}
+.tools-block image{
+  width: 44rpx;
+  height: 44rpx;
+  margin: 0 auto;
+  margin-bottom: 10rpx;  
+  display: block;
+}
+.nav-row{
+  height: 100rpx;
+  border-bottom:1rpx solid #f5f5f5;
+}
+.nav-row .ico{
+  width: 34rpx;
+  height: 34rpx;
+  margin-right:24rpx;
+}
+.nav-row .txt{
+  font-size: 30rpx;
+  color: #323233;
+}
+.arr-right{
+  width: 10rpx;
+  height: 18rpx;
+}

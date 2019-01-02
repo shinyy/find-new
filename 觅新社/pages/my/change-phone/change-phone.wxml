@@ -1,0 +1,97 @@
+<view wx:if="{{type==1&&step==1}}">
+  <view class="step">
+    <view class="y-grid y-alignc y-j-s t1">
+      <view class="step-num cur">1</view>
+      <image src="../../../images/arr.png" class="arr" />
+      <view class="step-num">2</view>
+    </view>
+    <view class="y-grid y-alignc y-j-s t2">
+      <view class="cur">验证原手机号</view>
+      <view>绑定新手机号</view>
+    </view>
+  </view>
+  <!-- 验证原手机号 -->
+  <view class="input-row">
+    <!-- <view class="li">
+      <input placeholder="请输入手机号码" name="phonenum" bindinput="inputPhone" maxlength="11" type="number"/>
+    </view> -->
+
+    <view class="li y-grid y-alignc y-j-s">
+      <input placeholder="请输入验证码" bindinput="inputCode"/>
+      <view class="yzm-btn" wx:if="{{!showTimer}}" bindtap="oldPhoneCode">获取验证码</view>
+      <view class="yzm-btn" wx:if="{{showTimer}}">{{timer}}秒后重试</view>
+    </view>
+  </view>
+  <view class="yz-btn" bindtap="oldPhoneVerification">验证</view>
+  <!-- 绑定新手机号 -->
+  <!-- <view class="input-row">
+    <view class="li">
+      <input placeholder="请输入手机号码" name="phonenum" bindinput="inputPhone" maxlength="11" type="number"/>
+    </view>
+    <view class="li y-grid y-alignc y-j-s">
+      <input placeholder="请输入验证码" />
+      <view class="yzm-btn" bindtap="getVerificationCode">获取验证码</view>
+    </view>
+  </view>
+  <view class="yz-btn cur" bindtap="reBindPhone">确认更换</view> -->
+</view>
+<view wx:if="{{type==1&&step==2}}">
+  <view class="step">
+    <view class="y-grid y-alignc y-j-s t1">
+      <view class="step-num cur">1</view>
+      <image src="../../../images/arr.png" class="arr" />
+      <view class="step-num cur">2</view>
+    </view>
+    <view class="y-grid y-alignc y-j-s t2">
+      <view class="cur">验证原手机号</view>
+      <view class="cur">绑定新手机号</view>
+    </view>
+  </view>
+  <!-- 验证原手机号 -->
+  <!-- <view class="input-row">
+    <view class="li y-grid y-alignc y-j-s">
+      <input placeholder="请输入验证码" bindinput="inputCode"/>
+      <view class="yzm-btn" bindtap="oldPhoneCode">获取验证码</view>
+    </view>
+  </view>
+  <view class="yz-btn" bindtap="oldPhoneVerification">验证</view> -->
+  <!-- 绑定新手机号 -->
+  <view class="input-row">
+    <view class="li">
+      <input placeholder="请输入手机号码" name="phonenum" bindinput="inputPhone" maxlength="11" type="number"/>
+    </view>
+    <view class="li y-grid y-alignc y-j-s">
+      <input placeholder="请输入验证码"  bindinput="inputCode"/>
+      <view class="yzm-btn" wx:if="{{!showTimer}}" bindtap="getVerificationCode">获取验证码</view>
+       <view class="yzm-btn" wx:if="{{showTimer}}">{{timer}}秒后重试</view>
+    </view>
+  </view>
+  <view class="yz-btn cur" bindtap="reBindPhone">确认更换</view>
+</view>
+
+<!-- 初次绑定 -->
+<form wx:if="{{type==0}}" bindsubmit='bindPhone'>
+  <view class="step">
+    <view class="y-grid y-alignc y-j-s t1">
+      <view class="step-num cur">1</view>
+      <image src="../../../images/arr.png" class="arr" />
+      <view class="step-num">2</view>
+    </view>
+    <view class="y-grid y-alignc y-j-s t2">
+      <view class="cur">输入手机号码</view>
+      <view>绑定新手机号</view>
+    </view>
+  </view>
+  <view class="input-row">
+    <view class="li">
+      <input placeholder="请输入手机号码" name="phonenum" bindinput="inputPhone" maxlength="11" type="number"/>
+    </view>
+    <view class="li y-grid y-alignc y-j-s">
+      <input placeholder="请输入验证码" bindinput="inputCode"/>
+      <view class="yzm-btn" wx:if="{{!showTimer}}"bindtap="getVerificationCode">获取验证码</view>
+      <view class="yzm-btn" wx:if="{{showTimer}}">{{timer}}秒后重试</view>
+    </view>
+  </view>
+  <!-- <view class="yz-btn">验证</view> -->
+  <view class="yz-btn cur" bindtap="bindPhone">绑定</view>
+</form>

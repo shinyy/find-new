@@ -1,0 +1,76 @@
+/* pages/my/change-phone/change-phone.wxss */
+.step-num{
+  width: 48rpx;
+  height: 48rpx;
+  border:1rpx solid #e7e7e7;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 48rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+.step-num.cur{
+  color: #27264d;
+  
+}
+.arr{
+  width: 220rpx;
+  height: 4rpx;
+  margin: 0 30rpx;
+}
+.step .t1{
+  width: 378rpx;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+}
+.step .t2{
+  width: 509rpx;
+  margin: 0 auto;
+  font-size: 30rpx;
+  color: #999;
+}
+.step .t2 .cur{
+  color: #27264d;
+}
+.step{
+  padding-top: 64rpx;
+  margin-bottom: 38rpx;
+}
+.input-row{
+  width: 600rpx;
+  margin: 0 auto;
+  margin-bottom: 50rpx;
+}
+.input-row .li{
+  height: 100rpx;
+  border-bottom:1rpx solid #e6e6e6;
+}
+.input-row .li input{
+  height: 100rpx;
+  font-size: 30rpx;
+  color: #323233;
+}
+.yzm-btn{
+  width: 160rpx;
+  height: 60rpx;
+  font-size: 26rpx;
+  color:#323233;
+  text-align: center;
+  line-height: 60rpx;
+  border: 1rpx solid #e6e6e6;
+}
+.yz-btn{
+  width: 600rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  font-size: 30rpx;
+  border: 2rpx solid #969699;
+  color: #969699;
+  border-radius: 0;
+  text-align: center;
+  line-height: 90rpx;
+}
+.yz-btn.cur{
+  color: #323233;
+  border: 1rpx solid #323233;
+}

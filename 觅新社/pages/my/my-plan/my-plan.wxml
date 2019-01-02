@@ -1,0 +1,91 @@
+<view class="body">
+  <view class="y-bgw y-bmar20">
+    <tab tabNav="{{tab}}" tabIndex="0" bind:parentTabTap="getTabIndex"></tab>
+  </view>
+  <view wx:if="{{tabIndex==0}}">
+    <view class="li y-bgw" wx:for="{{2}}">
+      <listtwo showType='mx'></listtwo>
+      <view class="content">
+        <view class="dt">行程内容</view>
+        <view class="dd">
+          <view class="y-grid list">
+            <view class="t1">
+              <text class="num">1</text>
+              <text>唱歌</text>
+            </view>
+            <view class="t2">
+              <text class="y-rmar20">…………</text>
+              <text>樱花四级主题KTV</text>
+            </view>
+          </view>
+          <view class="y-grid list">
+            <view class="t1">
+              <text class="num">2</text>
+              <text>吃饭</text>
+            </view>
+            <view class="t2">
+              <text class="y-rmar20">…………</text>
+              <text>海南椰子鸡四季</text>
+            </view>
+          </view>
+          <view class="y-grid list">
+            <view class="t1">
+              <text class="num">3</text>
+              <text>游泳</text>
+            </view>
+            <view class="t2">
+              <text class="y-rmar20">…………</text>
+              <text>星海名苑一体游泳馆</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="btn-row y-grid y-j-s">
+        <view class="b1">生成分享图片</view>
+        <navigator class="b2" url="../my-plan-detail/my-plan-detail">查看详情</navigator>
+      </view>
+    </view>
+  </view>
+
+
+
+  <view wx:if="{{tabIndex==1}}" class="pd-list">
+    <view class="li y-bgw" wx:for="{{2}}">
+      <navigator class="y-bmar20" url="{{navUrl}}">
+        <image src="../../../images/banner.jpg" />
+        <view class="h3 line-clamp-2">
+          在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳
+        </view>
+        <!-- <view class='m' wx:if="{{showType=='type1'}}">
+          预计人均
+          <text>￥5001</text>
+        </view> -->
+      </navigator>
+      <view class="y-grid  y-alignc y-j-s y-bmar10">
+        <view class="y-grid">
+          <view class="mark">本周精选</view>
+          <view class="mark">约会</view>
+        </view>
+        <view class="tt">仅限8-15</view>
+        
+      </view>
+      <view class="tt y-bmar10">提供商家使用码或手机号</view>
+      <view class="y-grid y-alignc y-j-s">
+        <view class="code">
+          <text >使用码：</text>
+          <text >4AND3DAD</text>
+        </view>
+        <view class="y-grid">
+          <view class="y-grid y-alignc y-rmar38">
+            <image class='like-ico y-rmar10' src="../../../images/share.png" />
+            <view class='num'>236</view>
+          </view>
+          <view class="y-grid y-alignc">
+            <image class='like-ico y-rmar10' src="../../../images/like.png" />
+            <view class="num">1236</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

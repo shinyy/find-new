@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "listtow":"/components/list2/list2",
+    "share":"/components/share/share"
+    
+  }
+}

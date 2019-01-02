@@ -1,0 +1,113 @@
+/* .cal-row{
+  width: 100%;
+  height: 106rpx;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+.cal-row .li{
+  width: 106rpx;
+  height: 106rpx;
+  float: left;
+  text-align: center;
+  font-size: 26rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+.cal-row .cur{
+  border: 2rpx solid #000;
+  box-sizing: border-box;
+  align-items: center;
+} */
+.cal-row{
+  /* width: 100%; */
+  height: 106rpx;
+  /* overflow-x: scroll; */
+  /* overflow-y: hidden; */
+  margin-bottom: 24rpx;
+  width: 100%;
+  white-space: nowrap;
+  background: #fff;
+}
+.cal-row .li{
+  width: 106rpx;
+  height: 106rpx;
+  display: inline-block;
+  text-align: center;
+  font-size: 26rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+.cal-row .cur{
+  width: 104rpx;
+  height: 104rpx;
+  border: 2rpx solid #000;
+  box-sizing: border-box;
+  align-items: center;
+}
+.bs-list{
+  padding:0 20rpx;
+  padding-top: 30rpx;
+}
+.bs-list .li{
+  padding-bottom: 50rpx;
+  margin-bottom: 30rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.bs-list .li image{
+  width: 710rpx;
+  height: 300rpx;
+  margin-bottom: 10rpx;
+}
+.bs-list .li .h3{
+  font-size: 32rpx;
+  /* font-weight: bold; */
+  line-height: 44rpx;
+  margin-bottom: 20rpx;
+}
+.bs-list .li .m{
+  font-size:30rpx; 
+}
+.bs-list .li .m text{
+  color: #e2320a;
+}
+.bs-list .li .mark{
+  width: 110rpx;
+  height: 34rpx;
+  font-size: 26rpx;
+  line-height: 34rpx;
+  text-align: center;
+  border: 1rpx solid #646466;
+  color: #646466;
+  margin-right:20rpx;
+}
+/* .bs-list .li .share-ico{
+  width: 34rpx;
+  height: 34rpx;
+} */
+.bs-list .li .like-ico{
+  width: 34rpx;
+  height: 34rpx;
+  margin-bottom: 0;
+}
+.bs-list .li .num{
+  font-size:24rpx;
+  color: #323233;
+}
+.use-btn{
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  border:2rpx solid #323233;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  color: #323233;
+  font-size: 30rpx;
+}
+.use-btn.type2{
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 58rpx;
+  margin-left: 30rpx;
+}

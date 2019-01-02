@@ -1,0 +1,30 @@
+<view class="body">
+  <view class="h3">
+    您的专属客户经理
+  </view>
+  <view class="ul y-bgw" wx:for="{{list}}">
+    <view class="y-grid li y-alignc ">
+      <image  src="../../../images/kfico1.png"/>
+      <view class="y-grid y-alignc y-j-s y-flex1 y-rpad20 bbor">
+        <view >
+          <view class="t1">{{item.name}}</view>
+          <view class="t2">{{item.position}}</view>
+        </view>
+        <view class="y-grid y-alignc t">
+          <view class="y-rmar20">工作时间：{{item.worktime}}</view>
+          <image src="../../../images/arr-right.png" class="arr-right"/>
+        </view>
+      </view>
+    </view>
+    <view class="y-grid li y-alignc ">
+      <image  src="../../../images/kfico2.png"/>
+      <view class="y-grid y-alignc y-j-s y-flex1 y-rpad20">
+        <view >
+          <view class="t1">Ta的微信号</view>
+          <view class="t2">{{item.wechat}}</view>
+        </view>
+        <view class="copy-btn" bindtap="copy" data-index="{{index}}">复制微信</view>
+      </view>
+    </view>
+  </view>
+</view>

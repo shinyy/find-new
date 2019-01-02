@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "list": "/components/list/list",
+    "share":"/components/share/share",
+    "actList": "/components/actList/list"
+    
+  }
+}

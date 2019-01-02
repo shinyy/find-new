@@ -1,0 +1,101 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.textStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textContainer {
+  margin-top: 200px;
+}
+.calendar{
+  background: #fff;
+  font-family: microsoft yahei,simhei;
+  margin-bottom: 20rpx;
+  padding-bottom: 30rpx;
+}
+.thead{
+  /* height: 50rpx;
+  line-height: 50rpx; */
+  font-size: 26rpx;
+  /* background: #f9f9f9;
+  border-bottom: 1rpx solid #ddd; */
+  margin-bottom: 20rpx;
+}
+.mth{
+  text-align: center;
+  font-size: 26rpx;
+  font-weight: bold;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.dtd{
+  overflow: hidden;
+}
+.td{
+  width: 107.142rpx;
+  height: 64rpx;
+  line-height: 64rpx; 
+  text-align: center;
+  font-size: 24rpx;
+}
+.td.dis{
+  color: #ccc;
+}
+.td .t{
+  width: 64rpx;
+  height: 64rpx;
+  margin: 0 auto;
+  }
+.td.in{
+  color: #fff;
+  /* background: #12b7f5; */
+  /*border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;*/
+  /* border-radius: 10rpx; */
+  /* line-height: 35rpx; */
+  
+}
+.td.in .t{
+  background: #323233;
+}
+.td.leave{
+  color: #fff;
+  background: #12b7f5;
+  /*border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;*/
+  border-radius: 10rpx;
+  
+  line-height: 35rpx;
+  
+  
+}
+.cal-scroll{
+  /* height: calc(100vh - 51rpx) */
+}
+
+/* 日历外的样式 */
+.watch-btn{
+  width: 280rpx;
+  height: 72rpx;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 72rpx;
+  border:1rpx solid #323233;
+  color: #323233;
+  margin-top: 20rpx;
+  margin: 0 auto;
+}
+.recommend-list{
+  padding: 0 20rpx;
+  background: #fff;
+}

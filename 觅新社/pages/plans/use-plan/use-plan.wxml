@@ -1,0 +1,77 @@
+<view class="body">
+  <view class="y-bgw y-bmar20 top">
+    <image src="../../../images/plan.jpg" />
+    <view class="btn-row">
+      <view class="use-btn">使用规划</view>
+    </view>
+  </view>
+  <view class="section y-bgw">
+    <view class="tab-nav y-grid y-j-c">
+      <view class="li {{tabIndex==index?'cur':''}}" wx:for="{{tab}}" wx:for-index="index" data-id="{{index}}" bindtap="tab">
+        {{item}}
+      </view>
+    </view> 
+    <view class="bs-list y-bgw">
+      <!-- <view class="li">
+        <navigator class="y-bmar20" url="../active-detail/active-detail">
+          <image src="../../../images/banner.jpg" />
+          <view class="h3 line-clamp-2">
+            在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳在莞之湘三月行,拾得美味记心中,主体餐厅小憩私密幽会最佳
+          </view>
+          <view class="y-grid">
+            <view class="mark">本周精选</view>
+            <view class="mark">约会</view>
+          </view>
+        </navigator>
+        <view class="y-grid  y-alignc y-j-s">
+          <view class='m'>
+            预计人均
+            <text>￥500</text>
+          </view>
+          <view class="y-grid">
+            <view class="y-grid y-alignc y-rmar38">
+              <image class='like-ico y-rmar10' src="../../../images/share.png" />
+              <view class='num'>236</view>
+            </view>
+            <view class="y-grid y-alignc">
+              <image class='like-ico y-rmar10' src="../../../images/like.png" />
+              <view class="num">1236</view>
+            </view>
+            <view class="use-btn type2">使用规划</view>
+          </view>
+        </view>
+      </view> -->
+
+
+      <view class="li" wx:for="{{list}}">
+        <navigator class="y-bmar20" url="../active-detail/active-detail">
+          <image src="../../../images/banner.jpg" />
+          <view class="h3 line-clamp-2">
+            {{item.title}}
+          </view>
+          <view class="y-grid">
+            <view class="mark">本周精选</view>
+            <view class="mark">约会</view>
+          </view>
+        </navigator>
+        <view class="y-grid  y-alignc y-j-s">
+          <view class='m'>
+            预计人均
+            <text>￥500</text>
+          </view>
+          <view class="y-grid">
+            <view class="y-grid y-alignc y-rmar38">
+              <image class='like-ico y-rmar10' src="../../../images/share.png" />
+              <view class='num'>236</view>
+            </view>
+            <view class="y-grid y-alignc">
+              <image class='like-ico y-rmar10' src="../../../images/like.png" />
+              <view class="num">1236</view>
+            </view>
+            <view class="use-btn type2">使用规划</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

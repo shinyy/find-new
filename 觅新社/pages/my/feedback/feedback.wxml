@@ -1,0 +1,42 @@
+<view class="body">
+  <view class="section type1 y-bgw y-tmar10 y-lrpad20">
+    <view class="til-row y-grid y-alignc">
+      <image src="../../../images/must.png" />
+      <view>描述您遇到的问题</view>
+    </view>
+    <view>
+      <textarea placeholder="详细描述遇到的问题" bindinput="inputQuestion" ></textarea>
+      <view class="font-num">0/200</view>
+    </view>
+  </view>
+  <view class="section type2 y-bgw ">
+    <view class="y-grid til-row2">
+      <text>上传凭证</text>
+      <text>（不超过3张）</text>      
+    </view>
+    <view class="upliad-row y-lpad20 y-bmar20">
+      <view class="img-list fl">
+        <image  style="width:160rpx;height:160rpx;margin-right:10rpx" wx:for="{{img}}" src="{{img[index]}}" data-index="{{index}}" bindtap='delImg' />
+      </view>
+      <image src="../../../images/filebtn.png" style="width:160rpx;height:160rpx;float:left"  bindtap="chooseImg"/>
+    </view>
+    <view class="input-row">
+      <view class="y-grid li y-alignc">
+        <view class="til-row sp y-grid y-alignc">
+          <image src="../../../images/must.png" />
+          <view>联系人</view>
+        </view>
+        <input type="text" placeholder="请输入姓名" bindinput="inputName" />
+      </view>
+      <view class="y-grid li y-alignc">
+        <view class="til-row sp y-grid y-alignc">
+          <image src="../../../images/must.png" />
+          <view>联系方式</view>
+        </view>
+        <input type="number" placeholder="请输入手机号码" bindinput="inputPhone" maxlength="11"/>
+      </view>
+    </view>
+  </view>
+  <!-- <button form-type="submit">提交</button> -->
+  <button bindtap="submit">提交</button>  
+</view>
